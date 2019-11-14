@@ -49,7 +49,7 @@ func (c *City) CreatRestaurant() (*Restaurant, error) {
 	r := &Restaurant{
 		maxSeat:     8,
 		orderChan:   make(chan string, 10),
-		finishChan:  make(chan string, 10),
+		finishChan:  make(chan string),
 		chefLocker:  make(chan int, 2),
 		customerMap: make(map[*Customer]bool, 0),
 		rwLocker:    new(sync.RWMutex),

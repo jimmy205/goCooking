@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"goPra/center/world"
 
 	"github.com/gin-gonic/gin"
@@ -29,7 +28,6 @@ func main() {
 			c := world.CreatCustomer()
 			go func() {
 				world.DefaultCity.JoinRestaurant(c)
-				fmt.Println("c ->", c.CustomerID)
 				world.DefaultWaiter.OrderSomething("buger", c)
 			}()
 		}

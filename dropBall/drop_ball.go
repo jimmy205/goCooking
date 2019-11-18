@@ -1,8 +1,13 @@
 package dropball
 
 import (
+	"fmt"
 	"time"
 )
+
+type ball struct {
+	to string
+}
 
 // Heaven 天堂
 type Heaven struct {
@@ -13,82 +18,83 @@ type Heaven struct {
 }
 
 type person struct {
-	handChan chan string
+	handChan chan *ball
 }
 
 // Lab 控制中心啟動
 func (h *Heaven) Lab() {
 
-	go h.peopleWaiting()
-
 	h.msgChan = make(chan string)
 
 	h.personA = &person{
-		handChan: make(chan string),
+		handChan: make(chan *ball, 5),
 	}
 	h.personB = &person{
-		handChan: make(chan string, 2),
+		handChan: make(chan *ball, 2),
 	}
 	h.personC = &person{
-		handChan: make(chan string, 2),
+		handChan: make(chan *ball, 2),
 	}
 
-	ballDropping := time.NewTicker(time.Second)
+	go h.getBall()
+
 	for {
+		time.Sleep(time.Second)
+
+		ball := &ball{
+			to: "B",
+		}
 
 		select {
-		// 發球機
-		case <-ballDropping.C:
-			h.personA.handChan <- "ball"
-		case role := <-h.msgChan:
-
-			switch role {
-			case "b":
-				if len(h.personC.handChan) == 2 {
-					go func() {
-						h.callLab("c")
-					}()
-				}
-			case "c":
-				for {
-					<-h.personC.handChan
-				}
-			}
+		case h.personA.handChan <- ball:
+			fmt.Println("A got ball,to B")
+		default:
+			fmt.Println("A miss ball ... ?")
 		}
 
 	}
 
 }
 
-// peopleWaiting 人在等待球
-func (h *Heaven) peopleWaiting() {
-
-	// 如果A要接球，可是B還沒接，打電話給實驗室，叫實驗室跟B說快點接球
-	// C如果被摧促，可以把球丟掉
-
+func (h *Heaven) getBall() {
 	for {
 
+		msg := &ball{}
 		select {
-		case b := <-h.personA.handChan:
-			h.personB.handChan <- b
-
-			// 如果B在忙沒辦法接球，打給實驗室
-			if len(h.personB.handChan) == 2 {
-				go func() {
-					h.callLab("b")
-				}()
+		case msg = <-h.personA.handChan:
+		case msg = <-h.personB.handChan:
+			msg.to = "C"
+		case msg = <-h.personC.handChan:
+			fmt.Println("c got Ball,handle ball")
+			for i := 0; i < 3; i++ {
+				fmt.Println("handling -> ", i)
+				time.Sleep(time.Second)
 			}
-		case b := <-h.personB.handChan:
-
-			h.personC.handChan <- b
-		case <-h.personC.handChan:
-			time.Sleep(time.Second * 2)
-
 		}
+
+		h.handleBall(msg)
 	}
 }
 
-// callLab 呼叫上帝
-func (h *Heaven) callLab(role string) {
-	h.msgChan <- role
+func (h *Heaven) handleBall(msg *ball) {
+
+	switch msg.to {
+	case "B":
+		select {
+		case h.personB.handChan <- msg:
+			fmt.Println("B got ball,to C")
+		default:
+			fmt.Println("B miss ball,A call god")
+		}
+	case "C":
+		select {
+		case h.personC.handChan <- msg:
+			fmt.Println("C got ball,Ready Handle it")
+
+		default:
+			fmt.Println("C miss ball,B call god")
+		}
+
+	}
+
 }

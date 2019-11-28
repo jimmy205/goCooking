@@ -57,7 +57,7 @@ func (h *Heaven) Lab() {
 	go h.personC.handleBall()
 	go h.waitingCall()
 
-	for i := 1; i <= 1000; i++ {
+	for i := 1; i <= 10; i++ {
 
 		ball := &ball{
 			ID: i,

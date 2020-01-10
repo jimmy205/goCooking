@@ -43,6 +43,7 @@ func (c *ControlPanel) ControlEntry(s *melody.Session, msg string) {
 	case "addMember":
 		n := gjson.Get(msg, "number").Int()
 		c.robotNum += n
+
 	case "deletMember":
 		n := gjson.Get(msg, "number").Int()
 		c.robotNum -= n

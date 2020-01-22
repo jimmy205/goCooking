@@ -1,17 +1,13 @@
 package main
 
 import (
+	"crypto/rand"
 	"log"
-	"time"
+	"math/big"
 )
 
 func main() {
-	defer func() {
-		if err := recover(); err != nil {
-			log.Println("recover get!!!")
-		}
-	}()
-
-	time.Sleep(time.Second * 3)
-	panic("")
+	b := big.NewInt(100)
+	r, err := rand.Int(rand.Reader, b)
+	log.Println("r :", r.Uint64(), "err :", err)
 }

@@ -19,6 +19,7 @@ func main() {
 		log.Println("🐔🐔🐔 Telegram BOT 找不到")
 		return
 	}
+
 	teleBot := TeleBot{
 		botAPI: bot,
 	}

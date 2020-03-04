@@ -1,0 +1,187 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "qlEzrgKgIkh7y0ePm9BNo1cNdXo=",
+			"path": "github.com/gin-contrib/sse",
+			"revision": "43f0f29dbd2b3f0feeebff91fd9cda22db296938",
+			"revisionTime": "2019-09-05T05:13:34Z"
+		},
+		{
+			"checksumSHA1": "RHxEEoGyivMFBnnUQnJ98van9SM=",
+			"path": "github.com/gin-gonic/gin",
+			"revision": "982daeb1ecdced87bbef6c11783a640eb88a193a",
+			"revisionTime": "2020-01-17T16:32:50Z"
+		},
+		{
+			"checksumSHA1": "VGrSfi6ORVO4G4bdQYtp2cZVEdI=",
+			"path": "github.com/gin-gonic/gin/binding",
+			"revision": "982daeb1ecdced87bbef6c11783a640eb88a193a",
+			"revisionTime": "2020-01-17T16:32:50Z"
+		},
+		{
+			"checksumSHA1": "/81vKkFpIIiNB/QszbfwiWfX1tk=",
+			"path": "github.com/gin-gonic/gin/internal/bytesconv",
+			"revision": "982daeb1ecdced87bbef6c11783a640eb88a193a",
+			"revisionTime": "2020-01-17T16:32:50Z"
+		},
+		{
+			"checksumSHA1": "rST0S8cuVbM57VmJhWXhKNUkKTc=",
+			"path": "github.com/gin-gonic/gin/internal/json",
+			"revision": "982daeb1ecdced87bbef6c11783a640eb88a193a",
+			"revisionTime": "2020-01-17T16:32:50Z"
+		},
+		{
+			"checksumSHA1": "rEjCbyKnZ5XzIRQ3E3qhxqNiYoI=",
+			"path": "github.com/gin-gonic/gin/render",
+			"revision": "982daeb1ecdced87bbef6c11783a640eb88a193a",
+			"revisionTime": "2020-01-17T16:32:50Z"
+		},
+		{
+			"checksumSHA1": "sKxbExwsja8j9qgytTkw65okQik=",
+			"path": "github.com/go-telegram-bot-api/telegram-bot-api",
+			"revision": "aa124ef1e84ecc14654ad242f3cf3bd2b0d5956c",
+			"revisionTime": "2020-01-13T06:30:19Z"
+		},
+		{
+			"checksumSHA1": "Q3FteGbNvRRUMJqbYbmrcBd2DMo=",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "4e55bbcbfaa105a596caba5bbc20d392806beda9",
+			"revisionTime": "2020-01-12T01:27:37Z"
+		},
+		{
+			"checksumSHA1": "4gKrTOaoNvbAgDCVfSLd6J77oPw=",
+			"path": "github.com/golang/snappy",
+			"revision": "ff6b7dc882cf4cfba7ee0b9f7dcc1ac096c554aa",
+			"revisionTime": "2019-09-04T06:34:54Z"
+		},
+		{
+			"checksumSHA1": "s5tdcjh84+tiKS3oSq77mzjB970=",
+			"path": "github.com/google/uuid",
+			"revision": "c2e93f3ae59f2904160ceaab466009f965df46d6",
+			"revisionTime": "2019-04-16T17:24:45Z"
+		},
+		{
+			"checksumSHA1": "VKx/YhlIAbIJ9dXAxCCHOkjom4U=",
+			"path": "github.com/gorilla/websocket",
+			"revision": "66b9c49e59c6c48f0ffce28c2d8b8a5678502c6d",
+			"revisionTime": "2018-08-25T15:15:06Z"
+		},
+		{
+			"checksumSHA1": "K7KbySVobbjuEPQUBqVakXbf1lE=",
+			"path": "github.com/jimmy205/telegram-bot-api",
+			"revision": "785525393659f33f6c77aadbc4f38376e7cbb5a6",
+			"revisionTime": "2020-02-13T09:21:46Z"
+		},
+		{
+			"checksumSHA1": "DbBm+PheV2I4RZY37xWD+5p8lcw=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "8a28c40e0162ba2a507244688ec0e46085b5ebfd",
+			"revisionTime": "2020-01-16T13:21:07Z"
+		},
+		{
+			"checksumSHA1": "A6nZdZ1/lTOVINhIndyw2ZWN9JU=",
+			"path": "github.com/naoina/go-stringutil",
+			"revision": "6b638e95a32d0c1131db0e7fe83775cbea4a0d0b",
+			"revisionTime": "2015-11-18T23:44:43Z"
+		},
+		{
+			"checksumSHA1": "FYM/8R2CqS6PSNAoKl6X5gNJ20A=",
+			"path": "github.com/naoina/toml",
+			"revision": "9fafd69674167c06933b1787ae235618431ce87f",
+			"revisionTime": "2017-09-18T21:04:37Z"
+		},
+		{
+			"checksumSHA1": "wqHUdIsZSwRHQzNTB+1KvJdONdM=",
+			"path": "github.com/naoina/toml/ast",
+			"revision": "9fafd69674167c06933b1787ae235618431ce87f",
+			"revisionTime": "2017-09-18T21:04:37Z"
+		},
+		{
+			"checksumSHA1": "kTzFx9qPcxQt16NPCqeYCrXPRio=",
+			"path": "github.com/nsqio/go-nsq",
+			"revision": "d7acddb4babdf3329ad415cc02b605a239011b4b",
+			"revisionTime": "2019-12-25T02:00:26Z"
+		},
+		{
+			"checksumSHA1": "dhcoAs6YFyvXiG55mx5WDxg+/4g=",
+			"path": "github.com/shopspring/decimal",
+			"revision": "cd690d0c9e2447b1ef2a129a6b7b49077da89b8e",
+			"revisionTime": "2018-07-09T20:31:17Z"
+		},
+		{
+			"checksumSHA1": "t8jzPFIv4DNACv+cuZoigNmjPLQ=",
+			"path": "github.com/technoweenie/multipartstreamer",
+			"revision": "a90a01d73ae432e2611d178c18367fbaa13e0154",
+			"revisionTime": "2013-10-20T00:18:33Z"
+		},
+		{
+			"checksumSHA1": "/eElhy2tdJ4bsB/W7+zroS2PCnk=",
+			"path": "github.com/tidwall/gjson",
+			"revision": "5c2e4b382486589dad7478130a364ee2fa6a068b",
+			"revisionTime": "2019-11-18T16:51:37Z"
+		},
+		{
+			"checksumSHA1": "8jl+NYRKijAXkUwjpy89Q60q00A=",
+			"path": "github.com/tidwall/match",
+			"revision": "33827db735fff6510490d69a8622612558a557ed",
+			"revisionTime": "2018-12-10T10:08:38Z"
+		},
+		{
+			"checksumSHA1": "ijmGS83faLA6LVpdeGkyRhqvQgM=",
+			"path": "github.com/tidwall/pretty",
+			"revision": "1166b9ac2b65e46a43d8618d30d1554f4652d49b",
+			"revisionTime": "2019-03-25T15:38:08Z"
+		},
+		{
+			"checksumSHA1": "8mJ7vjP4pj4Y8FH5jVT22mW5acA=",
+			"path": "github.com/ugorji/go/codec",
+			"revision": "42bc974514ff101a54c6b72a0e4dee29d96c0b26",
+			"revisionTime": "2019-08-12T10:43:08Z"
+		},
+		{
+			"checksumSHA1": "RqZTFjNShy/P3pBwildz3Xqt+hA=",
+			"path": "go-lib/github.com/go-telegram-bot-api/telegram-bot-api",
+			"revision": "7af8281fc0e3806700c19a186a38e1b818488302",
+			"revisionTime": "2018-07-25T01:17:00Z"
+		},
+		{
+			"checksumSHA1": "sXPYP83HeXfR/QfDsYywUpYt9/4=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "c96a22e43c9c1088b5e506727c975511357d9f68",
+			"revisionTime": "2020-01-02T13:58:03Z"
+		},
+		{
+			"checksumSHA1": "imPi2JDKAJPo4w4tiJWviYRKXOg=",
+			"path": "gopkg.in/olahol/melody.v1",
+			"revision": "d521390733761fe1db13de575c253afd5c743085",
+			"revisionTime": "2017-05-18T10:55:55Z"
+		},
+		{
+			"checksumSHA1": "mspriBK28mrdRiQNHoThnYEFaeQ=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "1f64d6156d11335c3f22d9330b0ad14fc1e789ce",
+			"revisionTime": "2019-11-19T21:27:36Z"
+		},
+		{
+			"checksumSHA1": "fjMEKb/v0UhJkXxZeMPOl+CQg40=",
+			"path": "gopra/delegate/printspec",
+			"revision": "66c94133f1887a2ce913cefbdece6fed7c8710e4",
+			"revisionTime": "2020-02-12T03:28:11Z"
+		},
+		{
+			"checksumSHA1": "2LHvJhJaFgwbDixTZqYRKI62+4o=",
+			"path": "gopra/mineGround/mine",
+			"revision": "66c94133f1887a2ce913cefbdece6fed7c8710e4",
+			"revisionTime": "2020-02-12T03:28:11Z"
+		},
+		{
+			"checksumSHA1": "v++1bVUxQdQf9XwRN/aPPYL37Xk=",
+			"path": "gopra/mineGround/rule",
+			"revision": "66c94133f1887a2ce913cefbdece6fed7c8710e4",
+			"revisionTime": "2020-02-12T03:28:11Z"
+		}
+	],
+	"rootPath": "goPra"
+}

@@ -1,7 +1,0 @@
-[nsq]
-nsq_look_up_url = "nsqlookupd:4161"
-nsq_node = "nsqd:4150"
-
-[telegram]
-token = "1029003085:AAGldLWman4RIleDGQTG_0Qlro-b_YH160M"
-chat_id = 569156035

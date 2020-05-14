@@ -4,20 +4,38 @@ services:
     nsqlookupd:
         image: nsqio/nsq
         command: /nsqlookupd
+        # networks:
+        #     - nsq-network
         ports:
         - "4160:4160"
         - "4161:4161"
     nsqd:
         image: nsqio/nsq
-        command: /nsqd --lookupd-tcp-address=nsqlookupd:4160 --broadcast-address=192.168.134.123
+        ## ip是本機ip，如果發現不能使用NSQ可能是IP改了
+        command: /nsqd --lookupd-tcp-address=nsqlookupd:4160 --broadcast-address=192.168.124.59
+        # networks:
+        #     - nsq-network
         depends_on:
         - nsqlookupd
         ports:
         - "4150:4150"
         - "4151:4151"
+    # nsqd2:
+    #     image: nsqio/nsq
+    #     ## ip是本機ip，如果發現不能使用NSQ可能是IP改了
+    #     command: /nsqd --lookupd-tcp-address=nsqlookupd:4160 --broadcast-address=192.168.124.59
+    #     # networks:
+    #     #     - nsq-network
+    #     depends_on:
+    #     - nsqlookupd
+    #     ports:
+    #     - "4152:4150"
+    #     - "4153:4151"
     nsqadmin:
         image: nsqio/nsq
         command: /nsqadmin --lookupd-http-address=nsqlookupd:4161
+        # networks:
+        #     - nsq-network
         depends_on:
         - nsqlookupd
         ports:
@@ -29,7 +47,7 @@ services:
         ports:
             - "3306:3306"
         volumes:
-            - ./wagersql:/wagersql
+            - db_data:/var/lib/mysql
         environment:
             MYSQL_USER: root
             MYSQL_ROOT_PASSWORD: qwe123
@@ -45,6 +63,19 @@ services:
         ports:
             - "3300:8080"
 
+    # Database GUI phpmyadmin
+    # phpmyadmin:
+    #     image: phpmyadmin/phpmyadmin
+    #     links:
+    #         - mysql
+    #     environment:
+    #         PMA_HOST: mysql
+    #         PMA_PORT: 3306
+    #     ports:
+    #         - "8080:80"
+    #     volumes:
+    #         - ./mysql:/var/lib/mysql
+
     redis-admin:
         image: rediscommander/redis-commander
         ports:
@@ -53,3 +84,11 @@ services:
             - REDIS_HOSTS=in-redis:redis:6379:0
         depends_on:
             - redis
+
+volumes:
+    db_data:
+        driver: "local" ## 這個不一定要打，他會預設
+
+# networks:
+#     nsq-network:
+#         driver: bridge
